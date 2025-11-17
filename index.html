@@ -213,10 +213,12 @@ openBtn.addEventListener('click', () => {
 
 // ---- Nama Tamu dari URL ----
 document.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname;
-    const parts = path.split('/');
+    // const path = window.location.pathname;
+    //const parts = path.split('/');
     // Ambil bagian terakhir dari URL
-    let guestName = parts[parts.length - 1]; 
+    // let guestName = parts[parts.length - 1]; 
+    const urlParams = new URLSearchParams(window.location.search);
+    let guestName = urlParams.get("tamu");
     
     // Decode URL
     guestName = decodeURIComponent(guestName.replace(/%20/g, ' '));
