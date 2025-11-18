@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undangan Pernikahan Yulian & Irma</title>
+    <title>Undangan Pernikahan Yulianto & Irma</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -67,7 +67,7 @@
 
 <section id="intro" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-light-blue-bg/80 backdrop-blur-sm transition duration-500">
     <div class="p-8 bg-white/90 rounded-3xl shadow-xl max-w-lg w-full">
-        <h1 class="text-5xl text-script text-dark-blue">Yulian & Irma</h1>
+        <h1 class="text-4xl md:text-5xl text-script text-dark-blue">Yulianto & Irma</h1>
         <p class="mt-4 text-xl text-gray-700">The Wedding Invitation</p>
 
         <div class="mt-6 p-4 border border-blue-200 bg-blue-50/50 rounded-lg">
@@ -89,9 +89,9 @@
             <h2 id="guestNameDisplayContent" class="text-2xl font-semibold text-dark-blue mt-1">Tamu Undangan</h2>
         </div>
 
-        <div>
-            <p class="text-lg text-primary-blue text-script mb-2">Pernikahan Yulian & Irma</p>
-            <h1 class="text-6xl text-script font-bold text-dark-blue">Yulian & Irma</h1>
+        <div class="text-center">
+            <p class="text-lg text-primary-blue text-script mb-2">Pernikahan</p>
+            <h1 class="text-4xl md:text-6xl text-script font-bold text-dark-blue">Yulianto & Irma</h1>
             <p class="mt-4 text-gray-600 max-w-md mx-auto italic">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang." - Q.S. Ar-Rum: 21</p>
         </div>
         
@@ -110,7 +110,7 @@
                 <div class="w-32 h-32 mx-auto rounded-full bg-blue-100 mb-4 border-4 border-blue-300 flex items-center justify-center text-4xl text-primary-blue">
                     Y
                 </div>
-                <h4 class="text-3xl text-script font-semibold text-primary-blue">Yulian</h4>
+                <h4 class="text-3xl text-script font-semibold text-primary-blue">Yulianto</h4>
                 <p class="text-sm text-gray-500">Putra Kedua dari</p>
                 <p class="text-gray-700 font-medium">Bapak Fulan & Ibu Fulani</p>
                 <a href="#" class="text-blue-500 hover:text-blue-700 text-sm mt-2 block">Instagram</a>
@@ -153,12 +153,12 @@
     <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-4xl text-script font-bold text-dark-blue">Galeri Kami</h3>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-            <img src="assets/img/1.jpg" class="rounded-xl shadow-md transform hover:scale-105 transition duration-300" alt="Foto Prewedding 1" />
-            <img src="assets/img/2.jpg" class="rounded-xl shadow-md transform hover:scale-105 transition duration-300" alt="Foto Prewedding 2" />
-            <img src="assets/img/3.jpg" class="rounded-xl shadow-md transform hover:scale-105 transition duration-300" alt="Foto Prewedding 3" />
-            <img src="assets/img/4.jpg" class="rounded-xl shadow-md transform hover:scale-105 transition duration-300" alt="Foto Prewedding 4" />
-            <img src="assets/img/5.jpg" class="rounded-xl shadow-md transform hover:scale-105 transition duration-300" alt="Foto Prewedding 5" />
-            <img src="assets/img/6.jpg" class="rounded-xl shadow-md transform hover:scale-105 transition duration-300" alt="Foto Prewedding 6" />
+            <img src="assets/img/1.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 1" />
+            <img src="assets/img/2.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 2" />
+            <img src="assets/img/3.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 3" />
+            <img src="assets/img/4.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 4" />
+            <img src="assets/img/5.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 5" />
+            <img src="assets/img/6.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 6" />
         </div>
     </div>
 
@@ -213,14 +213,9 @@ openBtn.addEventListener('click', () => {
 
 // ---- Nama Tamu dari URL ----
 document.addEventListener('DOMContentLoaded', () => {
-    // const path = window.location.pathname;
-    //const parts = path.split('/');
-    // Ambil bagian terakhir dari URL
-    // let guestName = parts[parts.length - 1]; 
     const urlParams = new URLSearchParams(window.location.search);
-    let guestName = urlParams.get("tamu");
+    let guestName = urlParams.get("to");
     
-    // Decode URL
     guestName = decodeURIComponent(guestName.replace(/%20/g, ' '));
     
     const displayIntro = document.getElementById('guestNameDisplayIntro');
@@ -307,6 +302,24 @@ function createPetal() {
 
 // Bikin bunga tiap 300ms
 setInterval(createPetal, 300);
+
+const revealItems = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Jika elemen masuk layar → tampilkan
+            entry.target.classList.remove('opacity-0', 'scale-75');
+            entry.target.classList.add('opacity-100', 'scale-100');
+        } else {
+            // Jika elemen keluar layar → sembunyikan lagi
+            entry.target.classList.add('opacity-0', 'scale-75');
+            entry.target.classList.remove('opacity-100', 'scale-100');
+        }
+    });
+}, { threshold: 0.2 });
+
+revealItems.forEach(el => revealObserver.observe(el));
 
 </script>
 
