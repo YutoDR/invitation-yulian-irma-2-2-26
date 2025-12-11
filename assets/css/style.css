@@ -1,0 +1,118 @@
+body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(180deg, #FFFFFF 0%, #E0F7FA 100%);
+      background-attachment: fixed;
+    }
+    .text-script {
+      font-family: 'Playfair Display', serif;
+    }
+    .card-decoration {
+      border: 2px solid #9bccf5; /* Biru cerah sebagai aksen */
+    }
+    @keyframes fadeZoomOut { from { opacity:1; transform:scale(1);} to { opacity:0; transform:scale(1.2);} }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
+    .intro-hide { animation: fadeZoomOut 0.9s ease-in forwards; }
+    .content-show { animation: fadeInUp 1s ease-out forwards; }
+    
+    #intro {
+      background-image: url('../bg/bg1.png'); /* ganti dengan backgroundmu */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ----- CORNER DECOR DI DALAM BOX INTRO ----- */
+    #intro > div {
+      position: relative;
+    }
+
+    /* #intro > div::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 110px;
+      height: 110px;
+      background-image: url('../bg/decor_bottom.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.45;
+      pointer-events: none;
+    } */
+
+    #content {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Bisa ganti contain */
+      opacity: 0.20;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Bunga Jatuh (Mengganti aset petal.png dengan ikon/simbol) */
+    .petal { 
+      position: fixed; top:-20px; width:16px; height:16px; 
+      font-size: 16px; line-height: 1; color: #93C5FD; /* Warna biru muda */
+      opacity:.85; animation:fall linear infinite; pointer-events:none; 
+      z-index: 50; /* Pastikan di atas semua konten */
+    }
+    .sway {
+      animation: sway 5s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+    @keyframes fall { 
+      0%{ transform:translateY(-10px) rotate(0deg);} 
+      100%{transform:translateY(110vh) rotate(360deg);} 
+    }
+    @keyframes sway {
+      0%   { transform: rotate(0deg); }
+      50%  { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .decor {
+      position: absolute;
+      pointer-events: none;
+      opacity: .65;
+      z-index: 5;
+      width: auto;
+      /* height: 110px; */
+    }
+
+    .decor-top-left {
+      top: 0;
+      left: 0;
+      transform: translate(-10%, -10%);
+    }
+
+    .decor-top-right {
+      top: 0;
+      right: 0;
+      transform: translate(10%, -10%) scaleX(-1);  /* mirror kanan */
+    }
+
+    .decor-bottom-left {
+      bottom: 0;
+      left: 0;
+      transform: translate(-10%, 10%);
+    }
+
+    .decor-bottom-right {
+      bottom: 0;
+      right: 0;
+      transform: translate(10%, 10%) scaleX(-1);   /* mirror kanan */
+    }
+
+    .decor-center {
+      display: block;
+      height: 120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
