@@ -5,6 +5,7 @@ tailwind.config = {
             'primary-blue': '#3B82F6', // Biru Cerah
             'dark-blue': '#1E3A8A',   // Biru Tua
             'light-blue-bg': '#E0F7FA', // Biru Sangat Muda
+            'dark-blue-bg': '#0F172A'  // Biru Gelap untuk mode gelap
           }
         }
       }
@@ -18,6 +19,7 @@ const musicBtn = document.getElementById('musicBtn');
 
 
 openBtn.addEventListener('click', () => {
+  requestFullscreen();
     intro.classList.add('intro-hide');
     setTimeout(() => {
         intro.classList.add('hidden');
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ---- Countdown ----
-const targetDate = new Date("2026-01-01T08:00:00").getTime(); // Set waktu mulai Akad
+const targetDate = new Date("2026-02-02T08:00:00").getTime(); // Set waktu mulai Akad
 setInterval(() => {
     const now = new Date().getTime();
     const diff = targetDate - now;
@@ -139,3 +141,15 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 revealItems.forEach(el => revealObserver.observe(el));
+
+function requestFullscreen() {
+    const el = document.documentElement; // fullscreen seluruh halaman
+
+    if (el.requestFullscreen) {
+        el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) { // Safari
+        el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) { // IE/Edge lama
+        el.msRequestFullscreen();
+    }
+}
