@@ -19,7 +19,7 @@ const musicBtn = document.getElementById('musicBtn');
 
 
 openBtn.addEventListener('click', () => {
-  requestFullscreen();
+  // requestFullscreen();
     intro.classList.add('intro-hide');
     setTimeout(() => {
         intro.classList.add('hidden');
@@ -43,19 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     let guestName = urlParams.get("to");
     
-    guestName = decodeURIComponent(guestName.replace(/%20/g, ' '));
-    
     const displayIntro = document.getElementById('guestNameDisplayIntro');
     const displayContent = document.getElementById('guestNameDisplayContent');
 
     if (guestName) {
-        guestName = guestName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-        
-        displayIntro.textContent = guestName;
-        displayContent.textContent = guestName;
+      guestName = decodeURIComponent(guestName.replace(/%20/g, ' '));
+      guestName = guestName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+      
+      displayIntro.textContent = guestName;
+      displayContent.textContent = guestName;
     } else {
-        displayIntro.textContent = "Tamu Undangan";
-        displayContent.textContent = "Tamu Undangan";
+      displayIntro.textContent = "Tamu Undangan";
+      displayContent.textContent = "Tamu Undangan";
     }
 });
 
@@ -133,9 +132,9 @@ const revealObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.remove('opacity-0', 'scale-75');
             entry.target.classList.add('opacity-100', 'scale-100');
-        } else {
-            entry.target.classList.add('opacity-0', 'scale-75');
-            entry.target.classList.remove('opacity-100', 'scale-100');
+        // } else {
+        //     entry.target.classList.add('opacity-0', 'scale-75');
+        //     entry.target.classList.remove('opacity-100', 'scale-100');
         }
     });
 }, { threshold: 0.2 });

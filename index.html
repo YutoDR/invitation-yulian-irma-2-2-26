@@ -7,11 +7,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  
+  <link rel="icon" href="data:,">
 </head>
 <body class="text-gray-800 overflow-hidden">
 
-  <button id="musicBtn" class="fixed hidden top-3 right-3 z-50 bg-primary-blue text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition transform hover:scale-125">
+  <button id="musicBtn" class="fixed hidden top-3 right-3 z-50 bg-primary-blue text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition transform ">
     <svg id="musicIconOn" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.293 7.293a1 1 0 011.414 0l.293.293c.698.698.85 1.776.505 2.687l.006.007.293.293a1 1 0 010 1.414l-1.414 1.414a1 1 0 01-1.414 0l-.293-.293a1 1 0 01-.505-.724A3.999 3.999 0 0113 10a4 4 0 011.293-2.707z" clip-rule="evenodd" />
     </svg>
@@ -42,7 +42,7 @@
   </section>
 
   <section id="content" class="hidden opacity-0 px-6 py-6 space-y-16">  
-    <div class="relative max-w-4xl mx-auto text-center "> <!-- space-y-10 -->
+    <div class="relative max-w-4xl mx-auto text-center reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out"> <!-- space-y-10 -->
       <div class="text-center">
         <p class="text-sm text-gray-600">Bapak/Ibu/Saudara/i yang terkasih,</p>
         <h1 id="guestNameDisplayContent" class="text-2xl font-semibold text-dark-blue mt-1">Tamu Undangan</h1>
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="max-w-4xl mx-auto text-center bg-white p-8 rounded-xl shadow-xl relative">
+    <div class="max-w-4xl mx-auto text-center bg-white p-8 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
       <img src="assets/bg/bg1.png" alt=""  class="content-bg-img">
       <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[110px]">
       <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[110px]">
@@ -64,7 +64,7 @@
       <div id="countdown" class="text-2xl font-extrabold text-primary-blue leading-relaxed"></div>
     </div>
 
-    <div class="max-w-4xl mx-auto text-center bg-white p-8 rounded-xl shadow-xl relative">
+    <div class="max-w-4xl mx-auto text-center bg-white p-8 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
       <img src="assets/bg/bg1.png" alt=""  class="content-bg-img">
       <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[200px]">
       <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-left h-[110px]">
@@ -99,14 +99,14 @@
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-4xl text-script font-bold text-dark-blue mb-8">Waktu & Tempat</h3>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-xl shadow-lg card-decoration">
+        <div class="bg-white p-6 shadow-lg card-decoration reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
           <p class="text-3xl text-blue-400 mb-2">⚭</p>
           <h4 class="text-2xl font-bold text-primary-blue">Akad Nikah</h4>
           <p class="text-lg font-semibold mt-3">Senin, 02 Februari 2026</p>
           <p class="text-gray-600">Pukul 08:00 WIB</p>
           <p class="mt-4 text-gray-700 font-medium">Dusun Sentul Desa Bukur Kecamatan Kandangan</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-lg card-decoration">
+        <div class="bg-white p-6 shadow-lg card-decoration reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
           <p class="text-3xl text-blue-400 mb-2">🥂</p>
           <h4 class="text-2xl font-bold text-primary-blue">Resepsi</h4>
           <p class="text-lg font-semibold mt-3">Senin, 02 Februari 2026</p>
@@ -114,25 +114,85 @@
           <p class="mt-4 text-gray-700 font-medium">Dusun Sentul Desa Bukur Kecamatan Kandangan</p>
         </div>
       </div>
-      <a href="https://goo.gl/maps/iYD7Tcv3GfvPsAsX9" target="_blank" class="inline-block mt-8 bg-primary-blue text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 transition transform hover:scale-105 font-bold">
-        <span class="mr-2">🗺️</span> Buka Google Maps
-      </a>
+      <div class="reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
+        <a href="https://goo.gl/maps/iYD7Tcv3GfvPsAsX9" target="_blank" class="inline-block mt-8 bg-primary-blue text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 transition transform hover:scale-105 font-bold">
+          <span class="mr-2">🗺️</span> Buka Google Maps
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative">
+      <h3 class="text-4xl text-script font-bold text-dark-blue mb-12 reveal">
+        Cerita Kami
+      </h3>
+
+      <div class="space-y-10">
+
+        <!-- Pertemuan -->
+        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
+          <img src="assets/bg/bg1.png" class="content-bg-img">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
+            Pertemuan
+          </span>
+          <p class="mt-6 text-gray-700 leading-relaxed max-w-xl mx-auto">
+            Tidak ada yang kebetulan di dunia ini. Kami dipertemukan pada waktu dan tempat
+            yang tidak pernah kami rencanakan, namun menjadi awal dari kisah kami.
+          </p>
+        </div>
+
+        <!-- Pendekatan -->
+        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
+          <img src="assets/bg/bg1.png" class="content-bg-img">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
+            Pendekatan
+          </span>
+          <p class="mt-6 text-gray-700 leading-relaxed max-w-xl mx-auto">
+            Dari obrolan sederhana hingga kebersamaan yang bermakna,
+            kami belajar saling mengenal, memahami, dan menguatkan satu sama lain.
+          </p>
+        </div>
+
+        <!-- Lamaran -->
+        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
+          <img src="assets/bg/bg1.png" class="content-bg-img">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
+            Lamaran
+          </span>
+          <p class="mt-6 text-gray-700 leading-relaxed max-w-xl mx-auto">
+            Dengan niat baik serta restu kedua orang tua,
+            kami memantapkan langkah untuk membawa hubungan ini ke arah yang lebih serius.
+          </p>
+        </div>
+
+        <!-- Pernikahan -->
+        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
+          <img src="assets/bg/bg1.png" class="content-bg-img">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
+            Pernikahan
+          </span>
+          <p class="mt-6 text-gray-700 leading-relaxed max-w-xl mx-auto">
+            Dengan penuh rasa syukur, kami siap mengikat janji suci pernikahan
+            untuk membangun keluarga yang sakinah, mawaddah, dan rahmah.
+          </p>
+        </div>
+
+      </div>
     </div>
 
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-4xl text-script font-bold text-dark-blue">Galeri Kami</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-        <img src="assets/img/1.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 1" />
-        <img src="assets/img/2.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 2" />
-        <img src="assets/img/3.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 3" />
-        <img src="assets/img/4.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 4" />
-        <img src="assets/img/5.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 5" />
-        <img src="assets/img/6.jpg" class="reveal opacity-0 scale-75 rounded-xl shadow-md transform hover:scale-125 transition-all duration-1000 ease-out" alt="Foto Prewedding 6" />
+        <img src="assets/img/1.jpg" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 1" />
+        <img src="assets/img/2.jpg" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 2" />
+        <img src="assets/img/3.jpg" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 3" />
+        <img src="assets/img/4.jpg" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 4" />
+        <img src="assets/img/5.jpg" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 5" />
+        <img src="assets/img/6.jpg" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 6" />
       </div>
     </div>
 
-    <div class="max-w-4xl mx-auto text-center space-y-8">
-      <div class="bg-white p-8 rounded-xl shadow-xl">
+    <div class="max-w-4xl mx-auto text-center space-y-8 reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
+      <div class="bg-white p-8 shadow-xl">
         <h3 class="text-4xl text-script font-bold text-dark-blue mb-4">Sampaikan Ucapan</h3>
         <p class="text-gray-600 mt-2">Doa restu dari Anda adalah hadiah terindah bagi kami.</p>
         <a href="https://forms.gle/" target="_blank" class="inline-block mt-4 bg-primary-blue text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition font-bold">
