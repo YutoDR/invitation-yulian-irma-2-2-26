@@ -123,7 +123,7 @@ function createPetal() {
 }
 
 // Bikin bunga tiap 300ms
-setInterval(createPetal, 300);
+setInterval(createPetal, 700);
 
 const revealItems = document.querySelectorAll('.reveal');
 
