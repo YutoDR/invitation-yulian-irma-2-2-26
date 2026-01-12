@@ -19,7 +19,7 @@ const musicBtn = document.getElementById('musicBtn');
 
 
 openBtn.addEventListener('click', () => {
-  // requestFullscreen();
+  requestFullscreen();
     intro.classList.add('intro-hide');
     setTimeout(() => {
         intro.classList.add('hidden');

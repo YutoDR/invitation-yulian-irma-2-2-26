@@ -53,6 +53,10 @@ body {
   animation: sway 5s ease-in-out infinite;
   transform-origin: bottom center;
 }
+.zoom-wrapper {
+  animation: zooming 5s ease-in-out infinite;
+  transform-origin: center;
+}
 @keyframes fall { 
   0%{ transform:translateY(-10px) rotate(0deg);} 
   100%{transform:translateY(110vh) rotate(360deg);} 
@@ -61,6 +65,11 @@ body {
   0%   { transform: rotate(0deg); }
   50%  { transform: rotate(5deg); }
   100% { transform: rotate(0deg); }
+}
+
+@keyframes zooming {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
 }
 
 .decor {
@@ -97,8 +106,8 @@ body {
 }
 
 .decor-center {
-  display: block;
-  height: 120px;
+  /* display: block; */
+  /* height: 200px; */
   margin-left: auto;
   margin-right: auto;
 }
