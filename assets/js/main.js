@@ -59,22 +59,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ---- Countdown ----
-const targetDate = new Date("2026-02-02T08:00:00").getTime(); // Set waktu mulai Akad
-setInterval(() => {
+function startCountdown(targetDate, elementId, selesaiText = "Acara Sedang Berlangsung!") {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
     const now = new Date().getTime();
     const diff = targetDate - now;
 
-    const d = Math.floor(diff / (1000*60*60*24));
-    const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-    const m = Math.floor((diff % (1000*60*60)) / (1000*60));
-    const s = Math.floor((diff % (1000*60)) / 1000);
-
     if (diff < 0) {
-        document.getElementById('countdown').innerHTML = `<span class="text-green-600">Acara Sedang Berlangsung!</span>`;
-    } else {
-        document.getElementById('countdown').innerHTML = `<b>${d}</b> Hari &nbsp;&nbsp; <b>${h}</b> Jam &nbsp;&nbsp; <b>${m}</b> Menit &nbsp;&nbsp; <b>${s}</b> Detik`;
+        el.innerHTML = `<span class="text-green-600">${selesaiText}</span>`;
+        return;
     }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    el.innerHTML = `
+        <b>${d}</b> Hari &nbsp;
+        <b>${h}</b> Jam &nbsp;
+        <b>${m}</b> Menit &nbsp;
+        <b>${s}</b> Detik
+    `;
+}
+
+const akadDate    = new Date("2026-02-02T08:00:00").getTime();
+const resepsiDate = new Date("2026-02-03T10:00:00").getTime();
+setInterval(() => {
+    startCountdown(akadDate, "countdown", "Acara Sedang Berlangsung");
+    startCountdown(resepsiDate, "countdown2", "Acara Sedang Berlangsung");
 }, 1000);
+
+
 
 // ---- Musik ----
 const bgm = document.getElementById('bgm');
