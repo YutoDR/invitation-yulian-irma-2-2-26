@@ -184,8 +184,12 @@ function requestFullscreen() {
 
 function copyRek(id) {
   const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Nomor rekening berhasil disalin");
-  });
+  navigator.clipboard.writeText(text);
+
+  const el = document.getElementById(id);
+  const old = el.innerText;
+  el.innerText = "Tersalin ✓";
+
+  setTimeout(() => el.innerText = old, 1500);
 }
 
