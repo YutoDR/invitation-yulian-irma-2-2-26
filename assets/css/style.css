@@ -111,3 +111,24 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.countdown-box {
+  min-width: 70px;
+  padding: 10px 6px;
+  background: #EFF6FF; /* blue-50 */
+  border: 1px solid #BFDBFE; /* blue-200 */
+  border-radius: 12px;
+  text-align: center;
+}
+
+.countdown-number {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1E3A8A; /* dark-blue */
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  color: #475569;
+  margin-top: 2px;
+}

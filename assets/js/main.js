@@ -60,28 +60,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ---- Countdown ----
 function startCountdown(targetDate, elementId, selesaiText = "Acara Sedang Berlangsung!") {
-    const el = document.getElementById(elementId);
-    if (!el) return;
+  const el = document.getElementById(elementId);
+  if (!el) return;
 
-    const now = new Date().getTime();
-    const diff = targetDate - now;
+  const now = new Date().getTime();
+  const diff = targetDate - now;
 
-    if (diff < 0) {
-        el.innerHTML = `<span class="text-green-600">${selesaiText}</span>`;
-        return;
-    }
+  if (diff < 0) {
+    el.innerHTML = `<span class="text-green-600 font-semibold text-lg">${selesaiText}</span>`;
+    return;
+  }
 
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((diff % (1000 * 60)) / 1000);
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-    el.innerHTML = `
-        <b>${d}</b> Hari &nbsp;
-        <b>${h}</b> Jam &nbsp;
-        <b>${m}</b> Menit &nbsp;
-        <b>${s}</b> Detik
-    `;
+  el.innerHTML = `
+    <div class="countdown-box">
+      <div class="countdown-number">${d}</div>
+      <div class="countdown-label">Hari</div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-number">${h}</div>
+      <div class="countdown-label">Jam</div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-number">${m}</div>
+      <div class="countdown-label">Menit</div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-number">${s}</div>
+      <div class="countdown-label">Detik</div>
+    </div>
+  `;
 }
 
 const akadDate    = new Date("2026-02-02T08:00:00").getTime();
@@ -169,3 +181,11 @@ function requestFullscreen() {
         el.msRequestFullscreen();
     }
 }
+
+function copyRek(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Nomor rekening berhasil disalin");
+  });
+}
+
