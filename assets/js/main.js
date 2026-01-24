@@ -195,5 +195,15 @@ function copyRek(id) {
 
 function toggleGift() {
   const gift = document.getElementById('giftContent');
-  gift.classList.toggle('hidden');
+
+  if (gift.classList.contains('max-h-0')) {
+    // buka
+    gift.classList.remove('max-h-0', 'opacity-0', 'translate-y-4');
+    gift.classList.add('max-h-[1000px]', 'opacity-100', 'translate-y-0');
+  } else {
+    // tutup
+    gift.classList.add('max-h-0', 'opacity-0', 'translate-y-4');
+    gift.classList.remove('max-h-[1000px]', 'opacity-100', 'translate-y-0');
+  }
 }
+
