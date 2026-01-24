@@ -14,7 +14,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link href="/assets/css/style.css" rel="stylesheet">
-  <link rel="icon" href="/assets/foto.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon">
 </head>
 <body class="text-gray-800 overflow-hidden">
 
@@ -221,7 +221,12 @@
         dengan kehadiran dan hadiah Anda.
       </p>
 
-      <div class="space-y-6 max-w-md mx-auto">
+      <button onclick="toggleGift()"
+        class="mx-auto mb-8 bg-primary-blue text-white px-6 py-3 rounded-full shadow hover:bg-blue-600 transition font-semibold">
+        🎁 Lihat Tanda Kasih
+      </button>
+
+      <div class="space-y-6 max-w-md mx-auto hidden transition-all duration-500" id="giftContent">
         <!-- Rekening 1 -->
         <div class="border rounded-xl p-4 bg-white/80 shadow">
           <div class="flex items-center gap-3">
@@ -233,7 +238,7 @@
 
               <div class="flex items-center gap-2">
                 <p class="font-mono text-lg tracking-wider" id="rek1">
-                  1122020742
+                  1126060269
                 </p>
 
                 <button onclick="copyRek('rek1')" 

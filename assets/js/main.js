@@ -193,3 +193,7 @@ function copyRek(id) {
   setTimeout(() => el.innerText = old, 1500);
 }
 
+function toggleGift() {
+  const gift = document.getElementById('giftContent');
+  gift.classList.toggle('hidden');
+}
