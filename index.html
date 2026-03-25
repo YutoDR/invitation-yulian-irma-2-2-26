@@ -1,311 +1,297 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Undangan Pernikahan Yulianto & Irma">
-  <meta property="og:description" content="The Wedding of Yulianto & Irma • Senin, 02 Februari 2026">
+  <meta name="description" content="Koleksi undangan digital Yulianto & Irma — Wedding, dan lainnya.">
+  <meta property="og:title" content="Undangan Digital — Yulianto & Irma">
+  <meta property="og:description" content="Koleksi undangan digital Yulianto & Irma">
   <meta property="og:image" content="https://yulian-irma.my.id/assets/img/thumbnail.jpg">
   <meta property="og:url" content="https://yulian-irma.my.id">
-  <meta property="og:type" content="website">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <title>Undangan Pernikahan Yulianto & Irma</title>
+  <title>Undangan Digital — Yulianto & Irma</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="icon" href="assets/logo.ico" type="image/x-icon">
-</head>
-<body class="text-gray-800 overflow-hidden">
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon">
+  <style>
+    /* ── Base ───────────────────────────────────── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <button id="musicBtn" class="fixed hidden top-3 right-3 z-50 bg-primary-blue text-white p-1 rounded-full shadow-lg hover:bg-blue-600 transition transform ">
-    <svg id="musicIconOn" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.293 7.293a1 1 0 011.414 0l.293.293c.698.698.85 1.776.505 2.687l.006.007.293.293a1 1 0 010 1.414l-1.414 1.414a1 1 0 01-1.414 0l-.293-.293a1 1 0 01-.505-.724A3.999 3.999 0 0113 10a4 4 0 011.293-2.707z" clip-rule="evenodd" />
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    .text-script { font-family: 'Playfair Display', serif; }
+
+    /* ── Light Theme ───────────────────────────── */
+    [data-theme="light"] body {
+      background: linear-gradient(160deg, #FFFFFF 0%, #E0F7FA 50%, #B3E5FC 100%);
+      color: #1e293b;
+    }
+    [data-theme="light"] .dash-header-title { color: #1E3A8A; }
+    [data-theme="light"] .dash-header-sub { color: #475569; }
+    [data-theme="light"] .invite-card {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(147,197,253,0.4);
+      box-shadow: 0 4px 24px rgba(30,58,138,0.06);
+    }
+    [data-theme="light"] .invite-card:hover {
+      box-shadow: 0 12px 40px rgba(30,58,138,0.14);
+      border-color: rgba(147,197,253,0.7);
+    }
+    [data-theme="light"] .card-title { color: #1E3A8A; }
+    [data-theme="light"] .card-sub { color: #475569; }
+    [data-theme="light"] .card-date { color: #1e40af; }
+    [data-theme="light"] .card-btn {
+      background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+      color: #fff;
+    }
+    [data-theme="light"] .card-btn:hover {
+      background: linear-gradient(135deg, #2563EB, #1E3A8A);
+    }
+    [data-theme="light"] .badge-active { background: #DCFCE7; color: #166534; }
+    [data-theme="light"] .badge-soon { background: #E0F2FE; color: #0369A1; }
+    [data-theme="light"] .footer-text { color: #64748b; }
+    [data-theme="light"] .theme-btn {
+      background: rgba(255,255,255,0.6);
+      color: #1E3A8A;
+      border: 1px solid rgba(147,197,253,0.5);
+    }
+    [data-theme="light"] .theme-btn:hover {
+      background: rgba(255,255,255,0.9);
+    }
+    [data-theme="light"] .coming-card {
+      background: rgba(255,255,255,0.45);
+      border: 2px dashed rgba(147,197,253,0.5);
+    }
+
+    /* ── Dark Theme ────────────────────────────── */
+    [data-theme="dark"] body {
+      background: linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0C1929 100%);
+      color: #e2e8f0;
+    }
+    [data-theme="dark"] .dash-header-title { color: #93C5FD; }
+    [data-theme="dark"] .dash-header-sub { color: #94A3B8; }
+    [data-theme="dark"] .invite-card {
+      background: rgba(30,41,59,0.7);
+      border: 1px solid rgba(59,130,246,0.2);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+    }
+    [data-theme="dark"] .invite-card:hover {
+      box-shadow: 0 12px 40px rgba(59,130,246,0.2);
+      border-color: rgba(59,130,246,0.5);
+    }
+    [data-theme="dark"] .card-title { color: #93C5FD; }
+    [data-theme="dark"] .card-sub { color: #94A3B8; }
+    [data-theme="dark"] .card-date { color: #60A5FA; }
+    [data-theme="dark"] .card-btn {
+      background: linear-gradient(135deg, #2563EB, #1D4ED8);
+      color: #fff;
+    }
+    [data-theme="dark"] .card-btn:hover {
+      background: linear-gradient(135deg, #3B82F6, #2563EB);
+    }
+    [data-theme="dark"] .badge-active { background: rgba(34,197,94,0.15); color: #4ADE80; }
+    [data-theme="dark"] .badge-soon { background: rgba(59,130,246,0.15); color: #60A5FA; }
+    [data-theme="dark"] .footer-text { color: #64748b; }
+    [data-theme="dark"] .theme-btn {
+      background: rgba(30,41,59,0.6);
+      color: #93C5FD;
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    [data-theme="dark"] .theme-btn:hover {
+      background: rgba(30,41,59,0.9);
+    }
+    [data-theme="dark"] .coming-card {
+      background: rgba(30,41,59,0.35);
+      border: 2px dashed rgba(59,130,246,0.25);
+    }
+
+    /* ── Card Animation ────────────────────────── */
+    /* Cards: CSS-only entrance with JS enhancement */
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .invite-card {
+      opacity: 0;
+      transform: translateY(30px) scale(0.96);
+      animation: cardEntrance 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    /* Stagger with nth-child (CSS fallback) */
+    .invite-card:nth-child(1) { animation-delay: 0.15s; }
+    .invite-card:nth-child(2) { animation-delay: 0.3s; }
+    .invite-card:nth-child(3) { animation-delay: 0.45s; }
+    .invite-card:nth-child(4) { animation-delay: 0.6s; }
+    .invite-card:nth-child(5) { animation-delay: 0.75s; }
+    .invite-card:nth-child(6) { animation-delay: 0.9s; }
+    /* JS-enhanced class (overrides CSS animation) */
+    .js-anim .invite-card {
+      animation: none;
+      opacity: 0;
+      transform: translateY(30px) scale(0.96);
+      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.6s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.3s ease,
+                  border-color 0.3s ease;
+    }
+    .js-anim .invite-card.card-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .invite-card:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    /* ── Card Decor ────────────────────────────── */
+    .card-decor {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.5;
+      z-index: 0;
+      width: auto;
+    }
+    .card-decor-tl { top: 0; left: 0; transform: translate(-15%, -15%); }
+    .card-decor-br { bottom: 0; right: 0; transform: translate(15%, 15%) scaleX(-1); }
+
+    /* ── Theme Button ──────────────────────────── */
+    .theme-btn {
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    /* ── Responsive ────────────────────────────── */
+    @media (max-width: 640px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Subtle float animation for header ─────── */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-anim {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* ── Shimmer on card image ─────────────────── */
+    .card-thumb-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .card-thumb-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: none;
+    }
+    .invite-card:hover .card-thumb-wrap::after {
+      animation: shimmer 0.75s ease forwards;
+    }
+    @keyframes shimmer {
+      to { left: 150%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggleBtn" class="theme-btn fixed top-4 right-4 z-50 w-10 h-10 rounded-full flex items-center justify-center shadow-lg cursor-pointer" title="Ganti Tema">
+    <svg id="themeIconSun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" style="display:none" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
     </svg>
-    <svg id="musicIconOff" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l2.293-2.293a1 1 0 011.414 1.414L16.414 10l2.293 2.293a1 1 0 01-1.414 1.414L15 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L13.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+    <svg id="themeIconMoon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
     </svg>
   </button>
-  <audio id="bgm" loop autoplay>
-    <source src="assets/music/Akad Cinta Kita.mp3" type="audio/mpeg" /> 
-  </audio>
 
-  <section id="intro" class="min-h-screen flex flex-col justify-center items-center text-center px-6 transition duration-500">
-    <div class="p-8 bg-white/90 rounded-3xl shadow-xl max-w-lg w-full">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-left h-[130px]">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-right h-[170px]">
-      <p class="mt-4 text-xl text-gray-800">The Wedding Invitation</p>
-      <h1 class="text-4xl md:text-6xl text-script text-dark-blue">Yulianto & Irma</h1>
-
-      <div class="mt-6 p-4 border border-blue-200 bg-blue-50/50 rounded-lg">
-        <p class="text-sm text-gray-600">Kepada Yth:</p>
-        <h2 id="guestNameDisplayIntro" class="text-3xl font-semibold text-dark-blue mt-1">Tamu Undangan</h2>
-      </div>
-      
-      <button id="openBtn" class="mt-8 bg-primary-blue text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 transition transform hover:scale-105 font-bold tracking-wider">
-        Buka Undangan
-      </button>
+  <!-- Header -->
+  <header class="pt-16 pb-8 px-6 text-center">
+    <div class="float-anim inline-block mb-4">
+      <span class="text-5xl">💌</span>
     </div>
-  </section>
+    <h1 class="dash-header-title text-script text-4xl md:text-5xl font-bold mb-3">
+      Yulianto & Irma
+    </h1>
+    <p class="dash-header-sub text-lg md:text-xl max-w-md mx-auto">
+      Koleksi Undangan Digital Kami
+    </p>
+  </header>
 
-  <section id="content" class="hidden opacity-0 px-6 py-6 space-y-16">  
-    <div class="relative max-w-4xl mx-auto text-center space-y-10">
-      <div class="text-center">
-        <p class="text-md text-gray-600">Bapak/Ibu/Saudara/i yang terkasih,</p>
-        <h1 id="guestNameDisplayContent" class="text-2xl font-semibold text-dark-blue mt-1">Tamu Undangan</h1>
-      </div>
+  <!-- Card Grid -->
+  <main class="max-w-5xl mx-auto px-6 pb-8">
+    <div class="card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="text-center space-y-8">
-        <p class="text-lg text-dark-blue text-script mb-2">Pernikahan</p>
-        <img src="assets/bg/decor2.png" class="decor-center zoom-wrapper h-[200px]">
-        <h1 class="text-4xl text-script font-bold text-dark-blue">Yulianto & Irma</h1>
-        <p class="mt-4 text-gray-600 max-w-md mx-auto italic">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang." - Q.S. Ar-Rum: 21</p>
-      </div>
-    </div>
+      <!-- Card: Wedding -->
+      <a href="/wedding/" id="card-wedding" class="invite-card rounded-2xl overflow-hidden relative group block no-underline">
+        <!-- Decorations (only for wedding card) -->
+        <img src="/assets/bg/decor_top.png" alt="" class="card-decor card-decor-tl h-[80px]">
+        <img src="/assets/bg/decor_bottom.png" alt="" class="card-decor card-decor-br h-[80px]">
 
-    <div class="max-w-4xl mx-auto text-center bg-white p-8 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-      <img src="assets/bg/bg1.png" alt=""  class="content-bg-img">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[200px]">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-left h-[110px]">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-right h-[110px]">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[200px]">
-      <h3 class="text-3xl text-script font-bold text-dark-blue mb-8">Mempelai</h3>
-      <div class="grid md:grid-cols-3 gap-6-items-center">
-        <div>
-          <div class="w-32 h-32 mx-auto rounded-full bg-blue-700 mb-4 border-2 border-blue-900 flex items-center justify-center text-4xl text-dark-blue">
-            <img src="assets/img/yulian.webp" alt="" class="w-30 h-30 mx-auto rounded-full object-cover">
-          </div>
-          <h4 class="text-2xl text-script font-semibold text-dark-blue">Yulianto Dwi Raharjo</h4>
-          <p class="text-sm text-gray-700">Putra Kedua dari</p>
-          <p class="text-gray-800 font-medium">Bapak Bambang Hermano & Ibu Supiyati</p>
-          <a href="https://www.instagram.com/yullian17" class="text-blue-500 hover:text-blue-700 text-sm mt-2 block">Instagram</a>
-        </div>
-        <div class="mx-auto">
-          <img src="assets/bg/decor1.png" alt="" class="decor-center sway h-[200px]">
-        </div>
-        <div>
-          <div class="w-32 h-32 mx-auto rounded-full bg-blue-700 mb-4 border-2 border-blue-900 flex items-center justify-center text-4xl text-dark-blue">
-            <img src="assets/img/irma.webp" alt="" class="w-30 h-30 mx-auto rounded-full object-cover">
-          </div>
-          <h4 class="text-2xl text-script font-semibold text-dark-blue">Irma Watus Sholihah</h4>
-          <p class="text-sm text-gray-700">Putri Kedua dari</p>
-          <p class="text-gray-800 font-medium">Bapak Budiono (Alm) & Ibu Maimunah</p>
-          <a href="https://www.instagram.com/hallomair17" class="text-blue-500 hover:text-blue-700 text-sm mt-2 block">Instagram</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto text-center bg-white p-8 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-      <img src="assets/bg/bg1.png" alt=""  class="content-bg-img">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[110px]">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[110px]">
-      <p class="text-xl text-gray-700 mb-2">Menuju Hari Bahagia</p>
-      <div id="countdown" class="flex justify-center gap-3"></div>
-    </div>
-
-    <div class="max-w-4xl mx-auto text-center bg-white py-12 px-8 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[150px]">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-left h-[110px]">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-right h-[110px]">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[150px]">
-      <h3 class="text-3xl text-script font-bold text-dark-blue mb-8">Waktu & Tempat</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 shadow-lg rounded-lg card-decoration reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-          <p class="text-3xl text-blue-700 mb-2">⚭</p>
-          <h4 class="text-2xl font-bold text-dark-blue">Akad Nikah</h4>
-          <p class="text-lg font-semibold mt-3">Senin, 02 Februari 2026</p>
-          <p class="text-gray-600">Pukul 08:00 WIB</p>
-          <p class="mt-4 text-gray-800 font-medium">Dusun Sentul Desa Bukur Kecamatan Kandangan</p>
-        </div>
-        <div class="bg-white p-6 shadow-lg rounded-lg card-decoration reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-          <p class="text-3xl text-blue-700 mb-2">🥂</p>
-          <h4 class="text-2xl font-bold text-dark-blue">Resepsi</h4>
-          <p class="text-lg font-semibold mt-3">Senin, 02 Februari 2026</p>
-          <p class="text-gray-600">Pukul 11:00 WIB - Selesai</p>
-          <p class="mt-4 text-gray-800 font-medium">Dusun Sentul Desa Bukur Kecamatan Kandangan</p>
-        </div>
-      </div>
-      <div class="reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-        <a href="https://maps.app.goo.gl/bDHMyeEnaxwkXU1r8" target="_blank" class="inline-block mt-8 bg-dark-blue text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-600 transition transform hover:scale-105 font-bold">
-          <span class="mr-2">🗺️</span> Buka Google Maps
-        </a>
-      </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto text-center relative">
-      <h3 class="text-4xl text-script font-bold text-dark-blue mb-12 reveal">
-        Cerita Kami
-      </h3>
-
-      <div class="space-y-10">
-
-        <!-- Pertemuan -->
-        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-          <img src="assets/bg/bg1.png" class="content-bg-img">
-          <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[100px]">
-          <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[100px]">
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
-            Pertemuan
+        <!-- Thumbnail -->
+        <div class="card-thumb-wrap h-44 relative z-[1]">
+          <img src="/assets/img/thumbnail.webp" alt="Wedding Yulianto & Irma"
+               class="w-full h-full object-cover">
+          <span class="badge-active absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full">
+            ✨ Aktif
           </span>
-          <p class="mt-6 text-gray-800 leading-relaxed max-w-xl mx-auto">
-            Tidak ada yang kebetulan di dunia ini. Kami dipertemukan pada waktu dan tempat
-            yang tidak pernah kami rencanakan, namun menjadi awal dari kisah kami.
-          </p>
         </div>
 
-        <!-- Pendekatan -->
-        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-          <img src="assets/bg/bg1.png" class="content-bg-img">
-          <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[100px]">
-          <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[100px]">
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
-            Pendekatan
-          </span>
-          <p class="mt-6 text-gray-800 leading-relaxed max-w-xl mx-auto">
-            Dari obrolan sederhana hingga kebersamaan yang bermakna,
-            kami belajar saling mengenal, memahami, dan menguatkan satu sama lain.
-          </p>
-        </div>
-
-        <!-- Lamaran -->
-        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-          <img src="assets/bg/bg1.png" class="content-bg-img">
-          <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[100px]">
-          <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[100px]">
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
-            Lamaran
-          </span>
-          <p class="mt-6 text-gray-800 leading-relaxed max-w-xl mx-auto">
-            Dengan niat baik serta restu kedua orang tua,
-            kami memantapkan langkah untuk membawa hubungan ini ke arah yang lebih serius.
-          </p>
-        </div>
-
-        <!-- Pernikahan -->
-        <div class="bg-white p-6 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-          <img src="assets/bg/bg1.png" class="content-bg-img">
-          <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[100px]">
-          <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[100px]">
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-blue text-white px-4 py-1 rounded-full text-sm shadow">
-            Pernikahan
-          </span>
-          <p class="mt-6 text-gray-800 leading-relaxed max-w-xl mx-auto">
-            Dengan penuh rasa syukur, kami siap mengikat janji suci pernikahan
-            untuk membangun keluarga yang sakinah, mawaddah, dan rahmah.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto text-center reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-      <h3 class="text-4xl text-script font-bold text-dark-blue">Galeri Kami</h3>
-      <div class="grid grid-cols-3 md:grid-cols-3 gap-4 mt-8">
-        <img src="assets/img/1.webp" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 1" />
-        <img src="assets/img/2.webp" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 2" />
-        <img src="assets/img/3.webp" class="rounded-xl shadow-md reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out" alt="Foto Prewedding 3" />
-      </div>
-    </div>
-
-    <div class="max-w-4xl mx-auto text-center bg-white p-10 shadow-xl relative reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-      <img src="assets/bg/bg1.png" alt="" class="content-bg-img">
-      <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[120px]">
-      <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[120px]">
-
-      <h3 class="text-4xl text-script font-bold text-dark-blue mb-6">
-        Tanda Kasih
-      </h3>
-
-      <p class="text-gray-600 max-w-xl mx-auto mb-10">
-        Terima kasih telah menambah semangat kebahagiaan pernikahan kami
-        dengan kehadiran dan hadiah Anda.
-      </p>
-
-      <button onclick="toggleGift()"
-        class="mx-auto mb-8 bg-primary-blue text-white px-6 py-3 rounded-full shadow hover:bg-blue-600 transition font-semibold">
-        🎁 Lihat Tanda Kasih
-      </button>
-
-      <div class="space-y-6 max-w-md mx-auto overflow-hidden max-h-0 opacity-0 translate-y-4 transition-all duration-1000 ease-in-out" id="giftContent">
-        <!-- Rekening 1 -->
-        <div class="border rounded-xl p-4 bg-white/80 shadow">
-          <div class="flex items-center gap-3">
-            <img src="assets/img/jatim.png" alt="Bank Jatim" class="w-12 h-12 object-contain">
-
-            <div class="flex-1 text-left">
-              <p class="font-semibold text-dark-blue">Bank Jatim</p>
-              <p class="text-sm text-gray-600">Irma Watus Sholihah</p>
-
-              <div class="flex items-center gap-2">
-                <p class="font-mono text-lg tracking-wider" id="rek1">
-                  1126060269
-                </p>
-
-                <button onclick="copyRek('rek1')" 
-                  class="text-primary-blue hover:text-blue-700"
-                  title="Salin nomor">
-                  📋
-                </button>
-              </div>
-            </div>
+        <!-- Content -->
+        <div class="p-5 relative z-[1]">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">💒</span>
+            <h2 class="card-title text-script text-xl font-bold">Wedding Invitation</h2>
           </div>
-        </div>
 
-        <!-- Rekening 2 -->
-        <div class="border rounded-xl p-4 bg-white/80 shadow">
-          <div class="flex items-center gap-3">
-            <img src="assets/img/bca.png" alt="BCA" class="w-12 h-12 object-contain">
+          <p class="card-sub text-sm mb-1">
+            Undangan Pernikahan
+          </p>
+          <p class="card-sub text-sm mb-3">
+            Yulianto Dwi Raharjo & Irma Watus Sholihah
+          </p>
 
-            <div class="flex-1 text-left">
-              <p class="font-semibold text-dark-blue">BCA</p>
-              <p class="text-sm text-gray-600">Yulianto Dwi Raharjo</p>
-
-              <div class="flex items-center gap-2">
-                <p class="font-mono text-lg tracking-wider" id="rek2">
-                  1400804636
-                </p>
-
-                <button onclick="copyRek('rek2')" 
-                  class="text-primary-blue hover:text-blue-700"
-                  title="Salin nomor">
-                  📋
-                </button>
-              </div>
-            </div>
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-4 h-4 card-date" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span class="card-date text-sm font-semibold">Senin, 02 Februari 2026</span>
           </div>
+
+          <span class="card-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold shadow-md transition-all duration-300 group-hover:shadow-lg">
+            Buka Undangan
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </span>
         </div>
+      </a>
 
+      <!-- Card: Coming Soon Placeholder -->
+      <div class="invite-card coming-card rounded-2xl overflow-hidden relative flex flex-col items-center justify-center min-h-[320px] text-center p-8">
+        <span class="text-5xl mb-4 opacity-50">📩</span>
+        <h2 class="card-title text-script text-xl font-bold mb-2 opacity-60">Coming Soon</h2>
+        <p class="card-sub text-sm opacity-50">Undangan berikutnya akan segera hadir...</p>
+        <span class="badge-soon absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full">
+          Segera
+        </span>
       </div>
+
     </div>
+  </main>
 
-    <div class="w-full md:max-w-5xl md:mx-auto text-center space-y-8 reveal opacity-0 scale-75 transform transition-all duration-1000 ease-out">
-      <div class="bg-white p-10 shadow-xl relative">
-        <img src="assets/bg/bg1.png" alt="" class="content-bg-img">
-        <img src="assets/bg/decor_top.png" alt="" class="decor decor-top-left h-[120px]">
-        <img src="assets/bg/decor_bottom.png" alt="" class="decor decor-bottom-right h-[120px]">
+  <!-- Footer -->
+  <footer class="text-center py-8 px-6">
+    <p class="footer-text text-sm">
+      © 2026 Yulianto & Irma — Dibuat dengan ❤️
+    </p>
+  </footer>
 
-        <p class="text-sm text-gray-500 mb-3">Kami yang berbahagia</p>
-
-        <h3 class="text-3xl md:text-4xl text-script font-bold text-dark-blue mb-6">
-          Yulianto & Irma
-        </h3>
-
-        <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami,
-          apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan
-          doa restu kepada kami.
-        </p>
-
-        <p class="mt-6 text-gray-600 italic">
-          Wassalamu’alaikum warahmatullahi wabarakatuh
-        </p>
-      </div>
-    </div>
-
-  </section>
-
-  <div id="petals"></div>
-
-<script src="assets/js/main.js"></script>
+  <script src="/assets/js/dashboard.js"></script>
 </body>
 </html>
