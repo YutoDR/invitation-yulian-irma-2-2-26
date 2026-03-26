@@ -136,6 +136,27 @@ function initReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+// ── Video Autoplay on Scroll (IntersectionObserver) ────────────
+function initVideoAutoplay() {
+  const videoIframe = document.getElementById('weddingVideo');
+  if (!videoIframe) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Jika video masuk ke area pandang (visible)
+      if (entry.isIntersecting) {
+        // Kirim perintah play ke YouTube API
+        videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      } else {
+        // Pause saat video keluar dari area pandang (opsional)
+        videoIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      }
+    });
+  }, { threshold: 0.5 }); // Mulai memutar saat 50% video terlihat
+
+  observer.observe(videoIframe);
+}
+
 // ── Init ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(getPreferredTheme());
@@ -145,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderTimeline();
   renderGallery();
+  initVideoAutoplay();
 
   // Delay observer slightly so DOM-injected elements can be found
   requestAnimationFrame(() => {
