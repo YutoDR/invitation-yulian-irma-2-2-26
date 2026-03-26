@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kenangan Pernikahan Yulianto & Irma — 02 Februari 2026">
+  <meta property="og:title" content="Kenangan Pernikahan Yulianto & Irma">
+  <meta property="og:description" content="Momen indah pernikahan Yulianto & Irma, 02 Februari 2026">
+  <meta property="og:image" content="https://yulian-irma.my.id/assets/img/thumbnail.jpg">
+  <meta property="og:url" content="https://yulian-irma.my.id/wedding/">
+  <title>Kenangan Pernikahan — Yulianto & Irma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/logo.ico" type="image/x-icon">
+  <style>
+    /* ── Base ───────────────────────────────── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    .text-script { font-family: 'Playfair Display', serif; }
+
+    /* ── LIGHT THEME ───────────────────────── */
+    [data-theme="light"] body {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 50%, #E0F2FE 100%);
+      color: #1e293b;
+    }
+    [data-theme="light"] .hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 100%); }
+    [data-theme="light"] .section-title { color: #1E3A8A; }
+    [data-theme="light"] .section-sub { color: #475569; }
+    [data-theme="light"] .timeline-label {
+      background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+      color: #fff;
+    }
+    [data-theme="light"] .timeline-line { background: #BFDBFE; }
+    [data-theme="light"] .timeline-dot { background: #3B82F6; border-color: #fff; }
+    [data-theme="light"] .video-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(147,197,253,0.3);
+      box-shadow: 0 4px 24px rgba(30,58,138,0.06);
+    }
+    [data-theme="light"] .footer-text { color: #64748b; }
+    [data-theme="light"] .back-link { color: #3B82F6; }
+    [data-theme="light"] .back-link:hover { color: #1E3A8A; }
+    [data-theme="light"] .theme-btn {
+      background: rgba(255,255,255,0.7);
+      color: #1E3A8A;
+      border: 1px solid rgba(147,197,253,0.5);
+    }
+    [data-theme="light"] .theme-btn:hover { background: rgba(255,255,255,0.95); }
+    [data-theme="light"] .photo-shadow { box-shadow: 0 4px 16px rgba(30,58,138,0.1); }
+
+    /* ── DARK THEME ────────────────────────── */
+    [data-theme="dark"] body {
+      background: linear-gradient(180deg, #0F172A 0%, #1E293B 50%, #0C1929 100%);
+      color: #e2e8f0;
+    }
+    [data-theme="dark"] .hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%); }
+    [data-theme="dark"] .section-title { color: #93C5FD; }
+    [data-theme="dark"] .section-sub { color: #94A3B8; }
+    [data-theme="dark"] .timeline-label {
+      background: linear-gradient(135deg, #2563EB, #1D4ED8);
+      color: #fff;
+    }
+    [data-theme="dark"] .timeline-line { background: rgba(59,130,246,0.2); }
+    [data-theme="dark"] .timeline-dot { background: #60A5FA; border-color: #1E293B; }
+    [data-theme="dark"] .video-card {
+      background: rgba(30,41,59,0.7);
+      border: 1px solid rgba(59,130,246,0.2);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+    }
+    [data-theme="dark"] .footer-text { color: #64748b; }
+    [data-theme="dark"] .back-link { color: #60A5FA; }
+    [data-theme="dark"] .back-link:hover { color: #93C5FD; }
+    [data-theme="dark"] .theme-btn {
+      background: rgba(30,41,59,0.6);
+      color: #93C5FD;
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    [data-theme="dark"] .theme-btn:hover { background: rgba(30,41,59,0.9); }
+    [data-theme="dark"] .photo-shadow { box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+
+    /* ── Hero ──────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 70vh;
+      min-height: 400px;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem 1.5rem;
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content h1, .hero-content p {
+      animation: heroFadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+    .hero-content p { animation-delay: 0.3s; }
+
+    /* ── Scroll Reveal ─────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Theme Button ──────────────────────── */
+    .theme-btn {
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    /* ── Lightbox ──────────────────────────── */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .lightbox-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-img {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .lightbox-overlay.active .lightbox-img {
+      transform: scale(1);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2.5rem;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 101;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── Timeline Decoration ───────────────── */
+    .timeline-section {
+      position: relative;
+    }
+    .timeline-section::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      transform: translateX(-50%);
+    }
+
+    /* ── Back Link ─────────────────────────── */
+    .back-link {
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggleBtn" class="theme-btn fixed top-4 right-4 z-50 w-10 h-10 rounded-full flex items-center justify-center shadow-lg cursor-pointer" title="Ganti Tema">
+    <svg id="themeIconSun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" style="display:none" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+    </svg>
+    <svg id="themeIconMoon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+    </svg>
+  </button>
+
+  <!-- Back to Dashboard -->
+  <a href="/" class="back-link fixed top-4 left-4 z-50 flex items-center gap-1 text-sm font-semibold px-3 py-2 rounded-full theme-btn shadow-lg" title="Kembali">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+    <span class="hidden sm:inline">Beranda</span>
+  </a>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero">
+    <img src="/assets/wed/IMG_4378.webp" alt="Kenangan Pernikahan" class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content max-w-4xl mx-auto">
+      <h1 class="text-script text-4xl md:text-6xl font-bold text-white mb-3 drop-shadow-lg">
+        Kenangan Pernikahan
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 font-medium drop-shadow">
+        Yulianto & Irma — Senin, 02 Februari 2026
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TIMELINE: AKAD ═══════════════ -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto text-center mb-10 reveal">
+      <span class="timeline-label inline-block px-5 py-2 rounded-full text-sm font-bold mb-4 shadow-md">Akad Nikah</span>
+      <h2 class="section-title text-script text-3xl md:text-4xl font-bold">Momen Sakral</h2>
+      <p class="section-sub mt-2 text-lg max-w-lg mx-auto">Janji suci yang mengikat dua hati menjadi satu.</p>
+    </div>
+    <div id="timeline-akad" class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5"></div>
+  </section>
+
+  <!-- ═══════════════ TIMELINE: RESEPSI ═══════════════ -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto text-center mb-10 reveal">
+      <span class="timeline-label inline-block px-5 py-2 rounded-full text-sm font-bold mb-4 shadow-md">Resepsi</span>
+      <h2 class="section-title text-script text-3xl md:text-4xl font-bold">Pesta Bahagia</h2>
+      <p class="section-sub mt-2 text-lg max-w-lg mx-auto">Berbagi kebahagiaan bersama keluarga dan sahabat.</p>
+    </div>
+    <div id="timeline-resepsi" class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5"></div>
+  </section>
+
+  <!-- ═══════════════ TIMELINE: MOMEN ═══════════════ -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto text-center mb-10 reveal">
+      <span class="timeline-label inline-block px-5 py-2 rounded-full text-sm font-bold mb-4 shadow-md">Momen Lainnya</span>
+      <h2 class="section-title text-script text-3xl md:text-4xl font-bold">Momen Berharga</h2>
+      <p class="section-sub mt-2 text-lg max-w-lg mx-auto">Setiap detik adalah kenangan yang tak ternilai.</p>
+    </div>
+    <div id="timeline-momen" class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5"></div>
+  </section>
+
+  <!-- ═══════════════ VIDEO ═══════════════ -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center mb-10 reveal">
+      <h2 class="section-title text-script text-3xl md:text-4xl font-bold">Video Pernikahan Kami</h2>
+      <p class="section-sub mt-2 text-lg">Cerita kami dalam satu video.</p>
+    </div>
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="video-card rounded-2xl overflow-hidden p-2 md:p-3">
+        <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+          <!-- Ganti VIDEO_ID dengan ID YouTube yang sebenarnya -->
+          <iframe
+            class="absolute inset-0 w-full h-full rounded-xl"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Video Pernikahan Yulianto & Irma"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GALLERY ═══════════════ -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-5xl mx-auto text-center mb-10 reveal">
+      <h2 class="section-title text-script text-3xl md:text-4xl font-bold">Galeri</h2>
+      <p class="section-sub mt-2 text-lg">Koleksi lengkap momen pernikahan kami.</p>
+    </div>
+    <div id="gallery-grid" class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"></div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="py-16 px-6 text-center">
+    <div class="max-w-lg mx-auto reveal">
+      <p class="text-script text-2xl md:text-3xl section-title font-bold mb-4">Terima Kasih</p>
+      <p class="section-sub text-lg leading-relaxed">
+        Terima kasih telah menjadi bagian dari hari bahagia kami.
+        Setiap doa dan kehadiran kalian adalah hadiah terindah.
+      </p>
+      <div class="mt-8">
+        <p class="footer-text text-sm">© 2026 Yulianto & Irma — Dibuat dengan ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/wedding.js"></script>
+</body>
+</html>
